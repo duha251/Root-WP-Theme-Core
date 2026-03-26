@@ -1,0 +1,14 @@
+<wpml-config>
+    <admin-texts>
+        <key name="pxl_theme_options">
+            <key name="sg_post_title_text" />
+            <key name="archive_readmore_text" />
+            <key name="template_slug" />
+            <key name="template_name" />
+            <key name="sg_template_title_text" />
+            <key name="careers_slug" />
+            <key name="careers_name" />
+            <key name="sg_careers_title_text" />
+        </key>
+    </admin-texts>
+</wpml-config>

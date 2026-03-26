@@ -1,1 +1,1 @@
-"# Root-WP-Theme-Core" 
+"# Root-WP-Theme-Core by Duha" 

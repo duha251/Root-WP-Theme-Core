@@ -1,0 +1,157 @@
+@use 'core.scss' as *;
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+
+html {
+	box-sizing: border-box;
+}
+
+:root {
+    --mt-box-size: 30px;
+    --mt-background-color: var(--mt-primary-color);
+    --mt-background-color-hover: var(--mt-secondary-color);
+    --mt-animation-duration: .3s;
+    --mt-animation-name: none;
+    --mt-transition-duration: .3s;
+    --mt-rotate: 0deg;
+    --mt-translate-x: 0px;
+    --mt-translate-y: 0px;
+    --mt-spacing-inline: 30px;
+    --mt-spacing-block: 30px;
+    --mt-highlight-color: #B0FF4E;
+    --mt-line-color: rgba(0, 0, 0, .15);
+    --mt-height: 1px;
+    --mt-border-style: solid;
+    --mt-border-color: #000;
+    --mt-color: #000;
+    --mt-columns-1: 100%;
+    --mt-columns-2: 50%;
+    --mt-columns-3: 33.333333333%;
+    --mt-columns-4: 25%;
+    --mt-columns-5: 20%;
+    --mt-columns-6: 16.666666666%;
+    --mt-width: 100%;
+    --mt-height: 100%;
+    --mt-grid-size: 50%;
+    --mt-line-thickness: 1px;
+    --mt-angle: 0deg;
+    --mt-gap: 15px;
+}
+
+body {
+    background-color: var(--mt-body-bg-color, transparent);
+    font-family: var(--mt-primary-font), sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #626262;
+    font-weight: 400;
+    letter-spacing: 0;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    &.body-overflow {
+        overflow: hidden;
+    }    
+}
+
+a {
+    cursor: pointer;
+    color: var(--mt-link-color);
+    text-decoration: none;
+    @include transition;
+    &:hover {
+        color: var(--mt-link-hover-color);
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--mt-heading-color);
+    font-family: var(--mt-heading-font);
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 70px;
+    line-height: 1.288571;
+    letter-spacing: -2.8px;
+}
+h2 {
+    font-size: 40px;
+    line-height: 1.3;
+    letter-spacing: -1.6px;
+}
+h3 {
+    font-size: 24px;
+    line-height: 1.08333;
+    letter-spacing: -0.96px;
+}
+h4 {
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: 0;
+}
+h5 {
+    font-size: 18px;
+    line-height: 1.22222;
+    letter-spacing: -0.72px;
+}
+h6 {
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: -0.64px;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+svg:not(.svg-origintal) {
+    circle[fill]:not([fill^="url("]) {
+        stroke: currentColor;
+        stroke-opacity: 1;
+    }
+    path[fill]:not([fill^="url("]), rect[fill]:not([fill^="url("]) {
+        fill: currentColor;
+        fill-opacity: 1;
+    }
+    path[stroke^="#"], path[stroke="black"], path[stroke="white"] {
+        stroke: currentColor;
+    }
+
+}
+
+input, textarea {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    &::placeholder {
+        color: inherit;
+    }
+}
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+    height: auto;
+}

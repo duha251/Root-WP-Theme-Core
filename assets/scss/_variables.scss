@@ -1,0 +1,24 @@
+// ==========================================================================
+//  VARIABLES
+// ==========================================================================
+
+
+// --------------------------------------------------------------------------
+//  Break Point
+// --------------------------------------------------------------------------
+$max-xs: "screen and (max-width: 575px)";
+$max-sm: "screen and (max-width: 767px)";
+$max-md: "screen and (max-width: 991px)";
+$max-lg: "screen and (max-width: 1199px)";
+$max-xl: "screen and (max-width: 1399px)";
+
+$min-sm: "screen and (min-width: 576px)";
+$min-md: "screen and (min-width: 768px)";
+$min-lg: "screen and (min-width: 992px)";
+$min-xl: "screen and (min-width: 1200px)";
+$min-xxl: "screen and (min-width: 1400px)";
+
+$mm-sm: "(min-width: 576px) and (max-width: 767px)";
+$mm-md: "(min-width: 768px) and (max-width: 991px)";
+$mm-lg: "(min-width: 992px) and (max-width: 1199px)";
+$mm-xl: "(min-width: 1200px) and (max-width: 1399px)";

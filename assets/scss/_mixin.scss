@@ -1,0 +1,171 @@
+@use "sass:list";
+@use 'variables.scss' as *;
+@mixin container($container: 1320px) {
+    width: 100%;
+    margin: 0 auto;
+    max-width: $container;
+}
+
+@mixin d-flex($gap: 30px, $align-item: null, $justify-content: null, $direction: null) {
+    display: flex;
+    @if $gap {
+        gap: $gap;
+    }
+    @if $align-item {
+        align-items: $align-item;
+    }
+    @if $justify-content {
+        justify-content: $justify-content;
+    }
+    @if $direction {
+        flex-direction: $direction;
+    }
+}
+
+@mixin d-inline-flex($gap: 30px, $align-item: null, $justify-content: null, $direction: null) {
+    display: inline-flex;
+    @if $gap {
+        gap: $gap;
+    }
+    @if $align-item {
+        align-items: $align-item;
+    }
+    @if $justify-content {
+        justify-content: $justify-content;
+    }
+    @if $direction {
+        flex-direction: $direction;
+    }
+}
+
+@mixin transition($duration: 0.3s, $timing: linear, $properties...) {
+  @if list.length($properties) == 0 {
+    transition: all $duration $timing;
+  } 
+  @else {
+    $transitions: ();
+    @each $prop in $properties {
+      $transitions: list.append($transitions, #{$prop} $duration $timing, comma);
+    }
+    transition: $transitions;
+  }
+}
+
+@mixin box-size($width: 30px, $height: $width) {
+    @if $width == $height {
+        --mt-box-size: #{$width};
+        width: var(--mt-box-size);
+        height: var(--mt-box-size);
+    }
+    @else {
+        width: $width;
+        height: $height;
+    }
+}
+
+@mixin round-box($box-size: 50px, $round: 50%) {
+    --mt-box-size: #{$box-size};
+    width: var(--mt-box-size);
+    min-width: var(--mt-box-size);
+    height: var(--mt-box-size);
+    border-radius: $round;
+}
+
+@mixin d-none($break-point: null) {
+    @if $break-point {
+        @media #{$break-point} {
+            display: none;
+        }
+    }@else {
+        display: none;
+    }
+}
+
+@mixin site-spacing-block($desktop: 120px, $tablet: 105px, $mobile: 90px){
+    padding-block: $desktop;
+}
+
+@mixin text-b2 {
+    font-family: var(--mt-secondary-font);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 0.83333;
+    letter-spacing: 1px;
+}
+
+@mixin text-b3 {
+    font-family: 'Inter';
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.15556; 
+}
+
+@mixin text-p1 {
+    font-family: "Golos Text";
+    font-size: 15px;
+    line-height: 1.53;
+}
+
+@mixin text-fin-p1 {
+    font-family: var(--mt-primary-font);
+    font-size: 20px;
+    font-weight: 500;
+}
+
+@mixin text-fin-p2 {
+    font-family: 'Inter';
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.625;
+    letter-spacing: -0.32px;
+}
+
+@mixin text-p2 {
+    font-family: var(--mt-primary-font);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.57143;
+}
+
+@mixin text-fin-p3 {
+    font-family: var(--mt-primary-font);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.53;
+}
+
+@mixin text-p4 {
+    font-family: var(--mt-primary-font);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.1667;
+}
+
+@mixin text-fin-button {
+    font-family: var(--mt-primary-font);
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 1.38667;
+}
+
+@mixin text-fin-button-2 {
+    font-family: var(--mt-primary-font);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.28px;
+}
+
+@mixin absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin text-gradient( $gradient: linear-gradient(to right, #BB7AE6 0%, #2563EB 27%, #FFFFFF 100%) ) {
+    background: $gradient;
+    -webkit-background-clip: text; 
+    background-clip: text;
+    color: transparent;
+}

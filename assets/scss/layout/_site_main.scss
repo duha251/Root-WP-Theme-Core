@@ -1,0 +1,16 @@
+@use '../core.scss' as *;
+
+.main, .hero {
+    .inner {
+        padding-block: 120px;
+    }
+}
+
+.hero {
+
+}
+
+.container {
+    max-width: var(--mt-container, 1300px);
+    margin: 0 auto;
+}
