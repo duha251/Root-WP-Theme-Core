@@ -1,13 +1,13 @@
 <?php
 /**
-* The MyTheme_Admin_Page base class
+* The Mytheme_Admin_Page base class
 */
 
 if( !defined( 'ABSPATH' ) )
 	exit; 
 
 
-class MyTheme_Admin_Page {
+class Mytheme_Admin_Page {
 
     public $parent = null;
 

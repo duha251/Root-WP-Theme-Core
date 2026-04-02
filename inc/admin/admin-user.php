@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-class MyTheme_Admin_User {
+class Mytheme_Admin_User {
 
     private $meta_key = 'mytheme_user_avatar_id';
 
@@ -36,7 +36,7 @@ class MyTheme_Admin_User {
         $preview_url = $avatar_id ? wp_get_attachment_image_url( $avatar_id, 'thumbnail' ) : '';
         ?>
         <div class="mytheme-avatar-section">
-            <h3><?php esc_html_e( 'MyTheme Custom Profile', 'mytheme' ); ?></h3>
+            <h3><?php esc_html_e( 'Mytheme Custom Profile', 'mytheme' ); ?></h3>
             <table class="form-table">
                 <tr>
                     <th><label for="mytheme_custom_avatar"><?php esc_html_e( 'Profile Picture', 'mytheme' ); ?></label></th>
@@ -129,7 +129,7 @@ class MyTheme_Admin_User {
             return;
         };
         ?>
-        <h3><?php _e('MyTheme Social Networks', 'mytheme'); ?></h3>
+        <h3><?php _e('Mytheme Social Networks', 'mytheme'); ?></h3>
         <table class="form-table">
             <?php foreach ( $social_list as $social ) : 
                 $id = sanitize_title($social); 
@@ -170,4 +170,4 @@ class MyTheme_Admin_User {
     }
 }
 
-new MyTheme_Admin_User();
+new Mytheme_Admin_User();

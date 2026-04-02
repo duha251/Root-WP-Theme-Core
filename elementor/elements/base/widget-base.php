@@ -1,13 +1,13 @@
 <?php
-namespace MyTheme\Elementor;
+namespace Mytheme\Elementor\Elements\Base;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 
-use Elementor\Widget_Base;
-// use MyTheme\Inc\Integrations\Elementor\Traits\Controls_Trait;
+use \Elementor\Widget_Base;
+// use Mytheme\Inc\Integrations\Elementor\Traits\Controls_Trait;
 
-abstract class MyThemeWidgetBase extends Widget_Base {
+abstract class Mytheme_Widget_Base extends Widget_Base {
 
     // use Controls_Trait;
 
@@ -60,12 +60,16 @@ abstract class MyThemeWidgetBase extends Widget_Base {
      * Get the path to the render template for this widget
      */
     protected function get_template_path( $layout = '1' ) {
-        $name = str_replace( 'mytheme', '', $this->get_name() );
-        $name = str_replace( '_', '-', $name ); // ensure folder name consistency
-        $template_name = "layout-{$layout}.php";
-        return get_template_directory() . "/elementor/render/{$name}/{$template_name}";
-    }
+        $name = $this->get_name();
 
+        $name = preg_replace( '/^mytheme[-_]?/', '', $name );
+
+        $name = str_replace( '_', '-', $name );
+
+        $template_name = "layout-{$layout}.php";
+
+        return get_template_directory() . "/elementor/widgets/{$name}/render/{$template_name}";
+    }
     /**
      * Default render logic shared by all child widgets
      */

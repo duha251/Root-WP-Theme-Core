@@ -1,6 +1,6 @@
 <?php
 /**
-* The MyTheme_Admin initiate the theme admin
+* The Mytheme_Admin initiate the theme admin
 */
 
 if( !defined( 'ABSPATH' ) )
@@ -8,7 +8,7 @@ if( !defined( 'ABSPATH' ) )
 
 require_once get_template_directory() . '/inc/admin/libs/tgmpa/class-tgm-plugin-activation.php' ; 
 require_once get_template_directory() . '/inc/admin/admin-require-plugins.php'; 
-class MyTheme_Admin {
+class Mytheme_Admin {
 
 	public function __construct() {
 		add_action( 'init', [$this, 'init'], 7 ); 
@@ -109,5 +109,5 @@ class MyTheme_Admin {
 	}
 }
  
-new MyTheme_Admin;
+new Mytheme_Admin;
 

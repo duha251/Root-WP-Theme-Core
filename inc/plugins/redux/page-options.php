@@ -1,18 +1,18 @@
 <?php
-namespace MyTheme\Inc\Plugins\Redux;
+namespace Mytheme\Inc\Plugins\Redux;
 
 /**
  *
  * This file defines the base class for all other classes in the theme that need to
  * interact with the WordPress hook system (actions and filters).
  *
- * @package    MyTheme
+ * @package    Mytheme
  * @subpackage Inc\Core
  * @author     Case Theme
  */
 
-use \MyTheme\Inc\Core\Option;
-use MyTheme\Inc\Helpers\StaticOptions;
+use \Mytheme\Inc\Core\Option;
+use Mytheme\Inc\Helpers\StaticOptions;
 
 // Prevents direct access to the file.
 if ( ! defined( 'ABSPATH' ) ) {

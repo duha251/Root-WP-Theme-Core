@@ -7,7 +7,7 @@
 	$active = get_option( mytheme()->get_theme_slug() . '_purchase_code_status', false ) === 'valid';
 	if( $dev_mode === true) $active = true;
 
-	$register = new MyTheme_Register;
+	$register = new Mytheme_Register;
 
 	$pxl_server_info = apply_filters( 'pxl_server_info', ['docs_url' => 'https://doc.casethemes.net/', 'support_url' => 'https://casethemes.ticksy.com/'] ) ; 
 ?>

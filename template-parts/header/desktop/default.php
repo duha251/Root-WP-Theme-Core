@@ -2,7 +2,7 @@
 /**
  * Template part for displaying header default.
  *
- * @package Mindverse
+ * @package Mytheme
  */
 
 ?>

@@ -3,7 +3,7 @@
 if( !defined( 'ABSPATH' ) )
 	exit; 
 
-class MyTheme_Admin_Templates {
+class Mytheme_Admin_Templates {
 
 	public function __construct() {
 		add_action( 'admin_menu', [$this, 'register_page'], 20 );
@@ -20,4 +20,4 @@ class MyTheme_Admin_Templates {
 		);
 	}
 }
-new MyTheme_Admin_Templates;
+new Mytheme_Admin_Templates;

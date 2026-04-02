@@ -1,12 +1,12 @@
 <?php
 /**
-* The MyTheme_Admin_Dashboard base class
+* The Mytheme_Admin_Dashboard base class
 */
 
 if( !defined( 'ABSPATH' ) )
 	exit; 
 
-class MyTheme_Admin_Dashboard extends MyTheme_Admin_Page {
+class Mytheme_Admin_Dashboard extends Mytheme_Admin_Page {
 	protected $id = null;
 	protected $page_title = null;
 	protected $menu_title = null;
@@ -28,4 +28,4 @@ class MyTheme_Admin_Dashboard extends MyTheme_Admin_Page {
 
 	}
 }
-new MyTheme_Admin_Dashboard;
+new Mytheme_Admin_Dashboard;

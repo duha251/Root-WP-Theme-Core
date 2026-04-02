@@ -1,12 +1,12 @@
 <?php
 /**
- * The MyTheme_Updater initiate the theme engine
+ * The Mytheme_Updater initiate the theme engine
  */
 
 if( !defined( 'ABSPATH' ) ) 
 	exit; // Exit if accessed directly
 	
-class MyTheme_Updater {
+class Mytheme_Updater {
 	
 	private $remote_api_url;
 	private $request_data;

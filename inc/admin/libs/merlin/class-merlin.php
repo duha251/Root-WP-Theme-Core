@@ -729,7 +729,7 @@ class Merlin {
 		$next      = $strings['btn-next']; 
 		$paragraph = ! $is_theme_registered ? $strings['license%s'] : $strings['license-success%s'];
 		$install   = $strings['btn-license-activate']; 
-		$register = new MyTheme_Register;
+		$register = new Mytheme_Register;
 		?>
 
 		<?php 

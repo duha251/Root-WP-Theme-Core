@@ -2,15 +2,15 @@
 /**
  * Handles integration with the PXL plugin.
  *
- * @package    MyTheme
+ * @package    Mytheme
  * @subpackage Inc\Plugins
  */
 
-namespace MyTheme\Inc\Plugins\Redux;
+namespace Mytheme\Inc\Plugins\Redux;
 
-use \MyTheme\Inc\Core\Option;
+use \Mytheme\Inc\Core\Option;
 
-class Hooks {
+class Redux_Hooks {
     private $option;
 	public function __construct( Option $option_instance ) {
         $this->option = $option_instance;

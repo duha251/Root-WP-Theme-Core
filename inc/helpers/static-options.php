@@ -1,5 +1,5 @@
 <?php
-namespace MyTheme\Inc\Helpers;
+namespace Mytheme\Inc\Helpers;
 
 class StaticOptions {
 

@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up to <main>
  *
- * @package MyTheme
+ * @package Mytheme
  * @author Case-Themes
  * @link https://mytheme.casethemes.net
  * @since 1.0.0

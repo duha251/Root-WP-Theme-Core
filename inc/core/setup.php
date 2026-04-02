@@ -1,10 +1,10 @@
 <?php
- namespace MyTheme\Inc\Core;
+ namespace Mytheme\Inc\Core;
 
 /**
  * Handles core theme setup and registrations.
  *
- * @package    MyTheme
+ * @package    Mytheme
  * @subpackage Inc\Setup
  */
 

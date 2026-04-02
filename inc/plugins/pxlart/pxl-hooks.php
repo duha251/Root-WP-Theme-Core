@@ -1,16 +1,16 @@
 <?php
- namespace MyTheme\Inc\Plugins\Pxlart;
+ namespace Mytheme\Inc\Plugins\Pxlart;
 
 /**
  * Handles integration with the Case-Addons plugin.
  *
- * @package    MyTheme
+ * @package    Mytheme
  * @subpackage Inc\Plugins
  */
 
-use MyTheme\Inc\Core\Option;
+use Mytheme\Inc\Core\Option;
 
-class Hooks {
+class Pxl_Hooks {
     private $option;
 
     public function __construct( Option $option_instance ) {

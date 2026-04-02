@@ -4,20 +4,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use MyTheme\Inc\Core\Setup;
-use MyTheme\Inc\Core\Option;
-use MyTheme\Inc\Frontend\Layout;
-use MyTheme\Inc\Frontend\Components;
-use MyTheme\Inc\Frontend\Enqueue;
+use Mytheme\Inc\Core\Setup;
+use Mytheme\Inc\Core\Option;
+use Mytheme\Inc\Frontend\Layout;
+use Mytheme\Inc\Frontend\Components;
+use Mytheme\Inc\Frontend\Enqueue;
 
-use MyTheme\Inc\Plugins\Pxlart\Hooks as PXL_Hooks; 
+use Mytheme\Inc\Plugins\Pxlart\Pxl_Hooks; 
 
 // Redux
-use MyTheme\Inc\Plugins\Redux\Hooks as Redux_Hooks;
-use MyTheme\Inc\Plugins\Redux\Theme_Options;
-use MyTheme\Inc\Plugins\Redux\Page_Options;
+use Mytheme\Inc\Plugins\Redux\Redux_Hooks;
+use Mytheme\Inc\Plugins\Redux\Theme_Options;
+use Mytheme\Inc\Plugins\Redux\Page_Options;
 
-final class MyTheme {
+//Elementor
+use \Mytheme\Elementor\Elementor_Init;
+
+
+final class Mytheme {
 
     private static $instance = null;
     public $option;
@@ -31,7 +35,6 @@ final class MyTheme {
 
     private function register_autoloader() {
         require_once get_template_directory() . '/inc/helpers/functions.php';
-        // require_once get_template_directory() . '/inc/helpers/media.php';
         spl_autoload_register( [ $this, 'load_class' ] );
     }
 
@@ -50,13 +53,17 @@ final class MyTheme {
         new Layout( $this->option );
         new Enqueue( $this->option, $this->get_theme_version() );
         if ( class_exists( 'Pxl_Elementor' ) ) {
-            new PXL_Hooks( $this->option );
+            new Pxl_Hooks( $this->option );
         }
 
         if ( class_exists( 'Redux' ) && is_admin()) {
             new Redux_Hooks( $this->option );
             new Theme_Options( $this->option ); 
             new Page_Options( $this->option );
+        }
+
+        if ( did_action( 'elementor/loaded' )) {
+            new Elementor_Init();
         }
     }
 
@@ -91,29 +98,40 @@ final class MyTheme {
     }
 
     public function load_class( $class_name ) {
-        if ( strpos( $class_name, 'MyTheme\\Inc\\' ) !== 0 ) {
+        $prefixes = [
+            'Mytheme\\Inc\\'       => get_template_directory() . '/inc/',
+            'Mytheme\\Elementor\\' => get_template_directory() . '/elementor/',
+        ];
+
+        foreach ( $prefixes as $prefix => $base_dir ) {
+            if ( strpos( $class_name, $prefix ) !== 0 ) {
+                continue;
+            }
+
+            $relative_class  = substr( $class_name, strlen( $prefix ) );
+            $parts           = explode( '\\', $relative_class );
+            $file_class_name = array_pop( $parts );
+
+            $file_class_name = str_replace( '_', '-', $file_class_name );
+            $file_name       = preg_replace( '/([a-z0-9])([A-Z])/', '$1-$2', $file_class_name );
+            $file_name       = strtolower( $file_name ) . '.php';
+
+            $path_parts = array_map( 'strtolower', $parts );
+            $path       = $base_dir . implode( '/', $path_parts );
+            $path       = rtrim( $path, '/' ) . '/';
+            $path      .= $file_name;
+
+            if ( file_exists( $path ) ) {
+                require_once $path;
+            }
+
             return;
-        }
-
-        $relative_class  = substr( $class_name, strlen( 'MyTheme\\Inc\\' ) );
-        $parts           = explode( '\\', $relative_class );
-        $file_class_name = array_pop( $parts );
-
-        $file_class_name = str_replace( '_', '-', $file_class_name );
-        $file_name       = strtolower( preg_replace( '/(?<!^)[A-Z]/', '-$0', $file_class_name ) ) . '.php';
-        $file_name       = str_replace( '--', '-', $file_name );
-
-        $path_parts = array_map( 'strtolower', $parts );
-        $path       = get_template_directory() . '/inc/' . implode( '/', $path_parts ) . '/' . $file_name;
-
-        if ( file_exists( $path ) ) {
-            require_once $path;
         }
     }
 }
 
 function mytheme() {
-    return MyTheme::instance();
+    return Mytheme::instance();
 }
 
 mytheme();

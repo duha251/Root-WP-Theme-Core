@@ -1,15 +1,15 @@
 <?php
-namespace MyTheme\Inc\Frontend;
+namespace Mytheme\Inc\Frontend;
 
 /**
  * Frontend Layout
  *
  * Handles layout structure for frontend.
  *
- * @package MyTheme
+ * @package Mytheme
  */
 
-use MyTheme\Inc\Core\Option;
+use Mytheme\Inc\Core\Option;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

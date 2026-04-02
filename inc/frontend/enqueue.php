@@ -2,14 +2,14 @@
 /**
  * Handles front-end scripts and styles.
  *
- * @package    MyTheme
+ * @package    Mytheme
  * @subpackage Inc\Frontend
  * @author     Case Theme
  */
 
-namespace MyTheme\Inc\Frontend;
+namespace Mytheme\Inc\Frontend;
 
-use MyTheme\Inc\Core\Option;
+use Mytheme\Inc\Core\Option;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

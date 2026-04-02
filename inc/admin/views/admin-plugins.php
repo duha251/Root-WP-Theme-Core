@@ -1,5 +1,5 @@
 <?php
-use MyTheme\Inc\Admin\MyTheme_Admin_Plugins;
+use Mytheme\Inc\Admin\Mytheme_Admin_Plugins;
 
 $installed_plugins = get_plugins();
 $plugins = TGM_Plugin_Activation::$instance->plugins;

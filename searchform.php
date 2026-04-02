@@ -2,11 +2,11 @@
 /**
  * Search Form Template
  * 
- * This file renders the search form for the Mindverse theme.
+ * This file renders the search form for the Mytheme theme.
  * It provides a customizable search interface for WordPress sites
- * using the Mindverse theme.
+ * using the Mytheme theme.
  * 
- * @package Mindverse
+ * @package Mytheme
  * @subpackage Templates
  * @since 1.0.0
  * @version 1.0.0

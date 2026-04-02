@@ -1,5 +1,5 @@
 <?php
-namespace MyTheme\Inc\Core;
+namespace Mytheme\Inc\Core;
 
 if ( ! defined( 'ABSPATH' ) ) {
     exit;

@@ -1,12 +1,12 @@
 <?php
 /**
- * The MyTheme_Register initiate the theme engine
+ * The Mytheme_Register initiate the theme engine
  */
 
 if( !defined( 'ABSPATH' ) ) 
 	exit; // Exit if accessed directly
 
-class MyTheme_Register {
+class Mytheme_Register {
 
 	/**
 	 * Variables required for the theme updater
@@ -76,12 +76,12 @@ class MyTheme_Register {
 			return;
 		}
 
-		if ( !class_exists( 'MyTheme_Updater' ) ) {
+		if ( !class_exists( 'Mytheme_Updater' ) ) {
 			// Load our custom theme updater
 			mytheme_get_template( 'inc/admin/updater/updater-class' );
 		}
 
-		new MyTheme_Updater(
+		new Mytheme_Updater(
 			array(
 				'remote_api_url' => $this->remote_api_url,
 				'version' 		 => $this->version,
@@ -332,4 +332,4 @@ class MyTheme_Register {
 	
 }
 
-new MyTheme_Register;
+new Mytheme_Register;

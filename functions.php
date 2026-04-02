@@ -4,7 +4,7 @@
  *
  * Sets up the theme and provides some helper functions
  *
- * @package MyTheme
+ * @package Mytheme
  * @author Case-Themes
  * @link https://mytheme.casethemes.net
  * @since 1.0.0

@@ -1,12 +1,12 @@
 <?php
 /**
-* The MyTheme_Admin_Import class
+* The Mytheme_Admin_Import class
 */
 
 if( !defined( 'ABSPATH' ) )
 	exit; // Exit if accessed directly
 
-class MyTheme_Admin_Import extends MyTheme_Admin_Page {
+class Mytheme_Admin_Import extends Mytheme_Admin_Page {
 	protected $id = null;
 	protected $page_title = null;
 	protected $menu_title = null;
@@ -31,4 +31,4 @@ class MyTheme_Admin_Import extends MyTheme_Admin_Page {
 
 	}
 }
-new MyTheme_Admin_Import;
+new Mytheme_Admin_Import;

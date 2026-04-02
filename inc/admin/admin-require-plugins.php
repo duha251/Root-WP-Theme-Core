@@ -35,7 +35,7 @@ function mytheme_register_required_plugins() {
             'source'             => 'case-addons.zip',
             'required'           => true,
             'logo'        => $images . '/case-addons.png',
-            'description' => esc_html__( 'Main process and Powerful Elements Plugin, exclusively for MyTheme WordPress Theme.', 'mytheme' ),
+            'description' => esc_html__( 'Main process and Powerful Elements Plugin, exclusively for Mytheme WordPress Theme.', 'mytheme' ),
         ),
 
         array(

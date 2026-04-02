@@ -5,7 +5,7 @@ $uri = get_template_directory_uri();
 $demos = array(
 	// Elementor Demos
 	'mytheme' => array(
-		'title'       => 'MyTheme',	
+		'title'       => 'Mytheme',	
 		'description' => '',
 		'screenshot'  => $uri . '/screenshot.jpg',
 		'preview'     => 'https://mytheme.casethemes.net/',

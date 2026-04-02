@@ -6,7 +6,7 @@
 if( !defined( 'ABSPATH' ) )
 	exit; 
 
-class MyTheme_Admin_Plugins extends MyTheme_Admin_Page {
+class Mytheme_Admin_Plugins extends Mytheme_Admin_Page {
 	protected $id = null;
 	protected $page_title = null;
 	protected $menu_title = null;
@@ -109,4 +109,4 @@ class MyTheme_Admin_Plugins extends MyTheme_Admin_Page {
 		);
 	}
 }
-new MyTheme_Admin_Plugins;
+new Mytheme_Admin_Plugins;

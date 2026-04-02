@@ -2,7 +2,7 @@
 /**
  * Template part for displaying header builder by Elementor.
  *
- * @package Mindverse
+ * @package Mytheme
  */
 // HTML
 if($layout_id <= 0) {
